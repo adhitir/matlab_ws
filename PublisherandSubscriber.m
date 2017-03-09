@@ -8,8 +8,8 @@ send(vel_publisher,msg);
 %% Subscribe to the pose
 odom_sub = rossubscriber('/odom');
 odomdata = receive(odom_sub);
-pose_data = odomdata.Pose.Pose;
-quat_data = odomdata.Quaternion;
+pose = odomdata.Pose.Pose;
+quat = pose.Orientation;
 
 x = pose.Position.X;
 y = pose.Position.Y;
